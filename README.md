@@ -24,6 +24,6 @@ Python é uma linguagem de programação de alto nível, interpretada, de script
 
 	É um framework para aplicações web gratuito e de código aberto, escrito em Python. Uma framework, onde você não precisa saber muito de Python para utilizar. Na verdade, a simplicidade da escrita do Python mesclada a velocidade de desenvolvimento proporcionada pelo Django faz você sentir satisfação em encarar projetos grandes.
 
-### **PostgreSQL:**
+### **Sqlite:**
 
-É um sistema gerenciador de banco de dados objeto relacional de código aberto, que foi projetado a partir de 1985 para solucionar o problema da incapacidade do modelo relacional em compreender objetos. Alguns recursos dessa ferramenta são a utilização de chaves estrangeiras, consultas complexas, linguagem procedural em várias linguagens, suporte ao modelo objeto-relacional,  indexação por texto, dentre outros.
+
