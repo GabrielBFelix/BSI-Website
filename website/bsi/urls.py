@@ -1,11 +1,11 @@
 from django.urls import path
 
 from . import views
-
+app_name = 'bsi'
 urlpatterns = [
 
     path('', views.index, name='index'),
-    path('professor/<int:id>', views.professor, name='professor'),
+    path('professor/<int:id>/', views.professor, name='professor'),
 
     path('aluno/<int:id>', views.aluno, name='aluno'),
 
