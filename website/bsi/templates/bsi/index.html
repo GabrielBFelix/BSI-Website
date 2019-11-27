@@ -1,0 +1,64 @@
+<h1>Noticias</h1>
+{% if noticia_list %}
+<ul>
+    {% for noticia in noticia_list %}
+    <li>
+        <a href="/bsi/noticia/{{ noticia.id }}">{{ noticia.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sem noticias cadastradas.</p>
+{% endif %}
+
+<h1>Professores</h1>
+{% if professor_list %}
+<ul>
+    {% for professor in professor_list %}
+    <li>
+        <a href="/bsi/professor/{{ professor.id }}">{{ professor.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sem professores cadastrados.</p>
+{% endif %}
+
+<h1>Alunos</h1>
+{% if aluno_list %}
+<ul>
+    {% for aluno in aluno_list %}
+    <li>
+        <a href="/bsi/aluno/{{ aluno.id }}">{{ aluno.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sem alunos cadastrados.</p>
+{% endif %}
+
+<h1>Projetos</h1>
+{% if projeto_list %}
+<ul>
+    {% for projeto in projeto_list %}
+    <li>
+        <a href="/bsi/projeto/{{ projeto.id }}">{{ projeto.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sem projetos cadastrados.</p>
+{% endif %}
+
+<h1>Laboratórios</h1>
+{% if laboratorio_list %}
+<ul>
+    {% for laboratorio in laboratorio_list %}
+    <li>
+        <a href="/bsi/laboratorio/{{ laboratorio.id }}">{{ laboratorio.nome }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sem laboratorios cadastrados.</p>
+{% endif %}
