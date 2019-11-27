@@ -5,6 +5,8 @@ class Professor(models.Model):
     username = models.CharField(max_length=100)
     senha = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
+    def __str__(self):
+        return self.nome
 
 
 class Aluno(models.Model):
@@ -12,19 +14,27 @@ class Aluno(models.Model):
     username = models.CharField(max_length=100)
     senha = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
+    def __str__(self):
+        return self.nome
 
 class Projeto(models.Model):
-    nome = nome = models.CharField(max_length=100)
-    coordenador = models.ForeignKey(Professor, on_delete=models.SET("0")) 
+    nome = models.CharField(max_length=100)
+    coordenador = models.ForeignKey(Professor, on_delete=models.SET("0"))
     numVagas = models.IntegerField(default=0)
     descricao = models.CharField(max_length=300)
+    def __str__(self):
+        return self.nome
 
 class Noticia(models.Model):
     nome = models.CharField(max_length=100)
     autor = models.ForeignKey(Professor, on_delete=models.SET("0"))
     descricao = models.CharField(max_length=300)
+    def __str__(self):
+        return self.nome
 
 class Laboratorio(models.Model):
     nome = models.CharField(max_length=100)
     coordenador = models.ForeignKey(Professor, on_delete=models.SET("0"))
     descricao = models.CharField(max_length=300)
+    def __str__(self):
+        return self.nome
