@@ -1,0 +1,27 @@
+<h1>Professores</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for professor in object_list %}
+    <tr>
+    <td>{{ professor.nome }}</td>
+    <td>{{ professor.username }}</td>
+    <td>{{ professor.email }}</td>
+    <td><a href="{% url "professor_view" professor.id %}">view</a></td>
+    <td><a href="{% url "professor_edit" professor.id %}">edit</a></td>
+    <td><a href="{% url "professor_delete" professor.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url "professor_new" %}">Adicionar Professor</a>
