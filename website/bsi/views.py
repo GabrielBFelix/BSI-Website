@@ -12,8 +12,10 @@ def index(request):
 
 class ProfessorList(ListView):
     model = models.Professor
+    success_url = reverse_lazy('professor_list')
 class ProfessorView(DetailView):
     model = models.Professor
+    success_url = reverse_lazy('professor_list')
 
 class ProfessorCreate(CreateView):
     model = models.Professor
