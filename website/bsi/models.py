@@ -34,7 +34,7 @@ class Noticia(models.Model):
 
 class Laboratorio(models.Model):
     nome = models.CharField(max_length=100)
-    coordenador = models.ForeignKey(Professor, on_delete=models.SET("0"))
+    coordenador = models.ForeignKey(Professor, null=True, on_delete=models.SET_NULL)
     descricao = models.CharField(max_length=300)
     def __str__(self):
         return self.nome
