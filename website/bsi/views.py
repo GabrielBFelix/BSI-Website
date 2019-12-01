@@ -38,25 +38,6 @@ class ProfessorDelete(DeleteView):
     model = models.Professor
     success_url = reverse_lazy('professor_list')
 
-
-
-class ProjetoList(ListView):
-    model = models.Projeto
-class ProjetoView(DetailView):
-    model = models.Projeto
-class ProjetoCreate(CreateView):
-    model = models.Projeto
-    fields = ['nome', 'coordenador', 'numVagas', 'descricao']
-    success_url = reverse_lazy('projeto_list')
-class ProjetoUpdate(UpdateView):
-    model = models.Projeto
-    fields = ['nome', 'coordenador', 'numVagas', 'descricao']
-    success_url = reverse_lazy('projeto_list')
-class ProjetoDelete(DeleteView):
-    model = models.Projeto
-    success_url = reverse_lazy('projeto_list')
-
-
 def aluno(request, id):
     return HttpResponse("Olhando o Aluno com id %i" % id)
 
