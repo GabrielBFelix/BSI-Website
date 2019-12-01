@@ -14,7 +14,12 @@ urlpatterns = [
     path('professor/delete/<int:pk>', views.ProfessorDelete.as_view(), name='professor_delete'),
     
 
-   
+    path('projeto/', views.ProjetoList.as_view(), name='projeto_list'),
+    path('projeto/view/<int:pk>', views.ProjetoView.as_view(), name='projeto_view'),
+    path('projeto/new', views.ProjetoCreate.as_view(), name='projeto_new'),
+    path('projeto/edit/<int:pk>', views.ProjetoUpdate.as_view(), name='projeto_edit'),
+    path('projeto/delete/<int:pk>', views.ProjetoDelete.as_view(), name='projeto_delete'),
+
     
 
     path('aluno/<int:id>', views.aluno, name='aluno'),
