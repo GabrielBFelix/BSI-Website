@@ -1,76 +1,112 @@
-<h1>Noticias</h1>
-{% if noticia_list %}
-<ul>
-    {% for noticia in noticia_list %}
-    <li>
-        <a href="/bsi/noticia/view/{{ noticia.id }}">{{ noticia.nome }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>Sem noticias cadastradas.</p>
-{% endif %}
+<html>
+{% load static %}
 
-<h1>Professores</h1>
-{% if professor_list %}
-<ul>
-    {% for professor in professor_list %}
-    <li>
-        <a href="/bsi/professor/view/{{ professor.id }}">{{ professor.nome }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>Sem professores cadastrados.</p>
-{% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
 
-<h1>Alunos</h1>
-{% if aluno_list %}
-<ul>
-    {% for aluno in aluno_list %}
-    <li>
-        <a href="/bsi/aluno/view/{{ aluno.id }}">{{ aluno.nome }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>Sem alunos cadastrados.</p>
-{% endif %}
+<head>
+    <title>Pagina inicial</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #menu ul{
+            margin: 0;
+            background-color: rgb(95, 94, 93);
+            list-style: none;
+        }
+        #menu ul li{
+            display: inline;
+        }
+        #menu ul li a{
+            padding: 10px 70px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+        }
+        #menu ul li a:hover{
+            color: aquamarine;
+        }
+    </style>
+</head>
 
-<h1>Projetos</h1>
-{% if projeto_list %}
-<ul>
-    {% for projeto in projeto_list %}
-    <li>
-        <a href="/bsi/projeto/view/{{ projeto.id }}">{{ projeto.nome }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>Sem projetos cadastrados.</p>
-{% endif %}
+<body>
+    <div class="page-header">
+        <h1><a href="/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+    </div>
+            
+    <div id="menu">
+        <ul>
+            <li><a href="/bsi/professor">CRUD Professores<br /></a></li>
+            <li><a href="/bsi/aluno">CRUD Alunos<br /></a></li>
+            <li><a href="/bsi/projeto">CRUD Projetos<br /></a></li>
+            <li><a href="/bsi/noticia">CRUD Noticias<br /></a></li>
+            <li><a href="/bsi/laboratorio">CRUD Laboratorios<br /></a></li>
+        </ul>
+    </div>
+    <h1>Noticias</h1>
+    {% if noticia_list %}
+    <ul>
+        {% for noticia in noticia_list %}
+        <li>
+            <a href="/bsi/noticia/view/{{ noticia.id }}">{{ noticia.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sem noticias cadastradas.</p>
+    {% endif %}
 
-<h1>Laboratórios</h1>
-{% if laboratorio_list %}
-<ul>
-    {% for laboratorio in laboratorio_list %}
-    <li>
-        <a href="/bsi/laboratorio/view/{{ laboratorio.id }}"
-            >{{ laboratorio.nome }}</a
-        >
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>Sem laboratorios cadastrados.</p>
-{% endif %}
+    <h1>Professores</h1>
+    {% if professor_list %}
+    <ul>
+        {% for professor in professor_list %}
+        <li>
+            <a href="/bsi/professor/view/{{ professor.id }}">{{ professor.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sem professores cadastrados.</p>
+    {% endif %}
 
-<br>
-<h1>CRUDS</h1>
-<ul>
-    <li><a href="/bsi/professor">CRUD Professores<br /></a></li>
-    <li><a href="/bsi/aluno">CRUD Alunos<br /></a></li>
-    <li><a href="/bsi/projeto">CRUD Projetos<br /></a></li>
-    <li><a href="/bsi/noticia">CRUD Noticias<br /></a></li>
-    <li><a href="/bsi/laboratorio">CRUD Laboratorios<br /></a></li>
-</ul>
+    <h1>Alunos</h1>
+    {% if aluno_list %}
+    <ul>
+        {% for aluno in aluno_list %}
+        <li>
+            <a href="/bsi/aluno/view/{{ aluno.id }}">{{ aluno.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sem alunos cadastrados.</p>
+    {% endif %}
+
+    <h1>Projetos</h1>
+    {% if projeto_list %}
+    <ul>
+        {% for projeto in projeto_list %}
+        <li>
+          <a href="/bsi/projeto/view/{{ projeto.id }}">{{ projeto.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sem projetos cadastrados.</p>
+    {% endif %}
+
+    <h1>Laboratórios</h1>
+    {% if laboratorio_list %}
+    <ul>
+        {% for laboratorio in laboratorio_list %}
+        <li>
+            <a href="/bsi/laboratorio/view/{{ laboratorio.id }}">{{ laboratorio.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sem laboratorios cadastrados.</p>
+    {% endif %}
+
+</body>
+</html>
