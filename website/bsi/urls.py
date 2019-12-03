@@ -7,7 +7,11 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('professor/<int:id>', views.professor, name='professor'),
 
-    path('aluno/<int:id>', views.aluno, name='aluno'),
+    path('aluno/', views.AlunoList_as_view, name='aluno_list'),
+    path('aluno/views/<int:id>', views.AlunoDetail_as_view, name='aluno_detail'),
+    path('aluno/create', views.AlunoCreate, name='aluno_create'),
+    path('aluno/update/<int:id>', views.AlunoUpdate, name='aluno_update'),
+    path('aluno/delete/<int:id>', views.AlunoDelete, name='aluno_delete'),
 
     path('laboratorio/<int:id>', views.laboratorio, name='laboratorio'),
 
