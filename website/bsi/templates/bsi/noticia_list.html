@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+
+<div class="page-header">
+    <h1><a href="/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+</div>
+<center>
+<h1>Notícias</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Autor</th>
+    <th>Descrição</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for noticia in object_list %}
+    <tr>
+    <td>{{ noticia.nome }}</td>
+    <td>{{ noticia.autor }}</td>
+    <td>{{ noticia.descricao }}</td>
+    <td><a href="{% url "noticia_view" noticia.id %}">view</a></td>
+    <td><a href="{% url "noticia_edit" noticia.id %}">edit</a></td>
+    <td><a href="{% url "noticia_delete" noticia.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url "noticia_new" %}">Adicionar Notícia</a>
+</center>

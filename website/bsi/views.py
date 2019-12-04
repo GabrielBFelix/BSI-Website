@@ -76,6 +76,31 @@ class LaboratorioDelete(DeleteView):
 
 
 
+
+
+
+class NoticiaList(ListView):
+    model = models.Noticia
+
+class NoticiaView(DetailView):
+    model = models.Noticia
+
+class NoticiaCreate(CreateView):
+    model = models.Noticia
+    fields = ['nome', 'autor', 'descricao']
+    success_url = reverse_lazy('noticia_list')
+
+class NoticiaUpdate(UpdateView):
+    model = models.Noticia
+    fields = ['nome', 'autor', 'descricao']
+    success_url = reverse_lazy('noticia_list')
+
+class NoticiaDelete(DeleteView):
+    model = models.Noticia
+    success_url = reverse_lazy('noticia_list')
+
+
+
 def aluno(request, id):
     return HttpResponse("Olhando o Aluno com id %i" % id)
 

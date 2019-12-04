@@ -31,5 +31,11 @@ urlpatterns = [
 
     path('laboratorio/<int:id>', views.laboratorio, name='laboratorio'),
 
-    path('noticia/<int:id>', views.noticia, name='noticia'),
+    path('noticia/', views.NoticiaList.as_view(), name='noticia_list'),
+    path('noticia', views.NoticiaList.as_view(), name='noticia_list'),
+    path('noticia/view/<int:pk>', views.NoticiaView.as_view(), name='noticia_view'),
+    path('noticia/new', views.NoticiaCreate.as_view(), name='noticia_new'),
+    path('noticia/edit/<int:pk>', views.NoticiaUpdate.as_view(), name='noticia_edit'),
+    path('noticia/delete/<int:pk>', views.NoticiaDelete.as_view(), name='noticia_delete'),
 ]
+
