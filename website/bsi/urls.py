@@ -26,8 +26,11 @@ urlpatterns = [
     path('laboratorio/edit/<int:pk>', views.LaboratorioUpdate.as_view(), name='laboratorio_edit'),
     path('laboratorio/delete/<int:pk>', views.LaboratorioDelete.as_view(), name='laboratorio_delete'),
     
-
-    path('aluno/<int:id>', views.aluno, name='aluno'),
+    path('aluno/', views.AlunoList.as_view(), name='aluno_list'),
+    path('aluno/view/<int:pk>', views.AlunoDetail.as_view(), name='aluno_view'),
+    path('aluno/new', views.AlunoCreate.as_view(), name='aluno_new'),
+    path('aluno/edit/<int:pk>', views.AlunoUpdate.as_view(), name='aluno_edit'),
+    path('aluno/delete/<int:pk>', views.AlunoDelete.as_view(), name='aluno_delete'),
 
     path('laboratorio/<int:id>', views.laboratorio, name='laboratorio'),
 

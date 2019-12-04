@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+
+<div class="page-header">
+    <h1><a href="/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+</div>
+<center>
+<h1>Alunos</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for aluno in object_list %}
+    <tr>
+    <td>{{ aluno.nome }}</td>
+    <td>{{ aluno.username }}</td>
+    <td>{{ aluno.email }}</td>
+    <td><a href="{% url "aluno_view" aluno.id %}">view</a></td>
+    <td><a href="{% url "aluno_edit" aluno.id %}">edit</a></td>
+    <td><a href="{% url "aluno_delete" aluno.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url "aluno_new" %}">Adicionar Aluno</a>
+</center>
