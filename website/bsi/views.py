@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Aluno
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
+from django.urls import reverse_lazy
 
 def index(request):
     return HttpResponse("HOME PAGE")
@@ -14,12 +15,17 @@ def aluno(request, id):
 
 class AlunoCreate(CreateView):
     model = Aluno
-
+    fields = ['nome', 'username', 'email', 'senha']
+    success_url = reverse_lazy('aluno_list')
+    
 class AlunoUpdate(UpdateView):
     model = Aluno
+    fields = ['nome', 'username', 'email', 'senha']
+    success_url = reverse_lazy('aluno_list')
 
 class AlunoDelete(DeleteView):
     model = Aluno
+    success_url = reverse_lazy('aluno_list')
 
 class AlunoList(ListView):
     model = Aluno
