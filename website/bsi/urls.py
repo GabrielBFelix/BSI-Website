@@ -20,6 +20,11 @@ urlpatterns = [
     path('projeto/edit/<int:pk>', views.ProjetoUpdate.as_view(), name='projeto_edit'),
     path('projeto/delete/<int:pk>', views.ProjetoDelete.as_view(), name='projeto_delete'),
 
+    path('laboratorio', views.LaboratorioList.as_view(), name='laboratorio_list'),
+    path('laboratorio/view/<int:pk>', views.LaboratorioView.as_view(), name='laboratorio_view'),
+    path('laboratorio/new', views.LaboratorioCreate.as_view(), name='laboratorio_new'),
+    path('laboratorio/edit/<int:pk>', views.LaboratorioUpdate.as_view(), name='laboratorio_edit'),
+    path('laboratorio/delete/<int:pk>', views.LaboratorioDelete.as_view(), name='laboratorio_delete'),
     
 
     path('aluno/<int:id>', views.aluno, name='aluno'),

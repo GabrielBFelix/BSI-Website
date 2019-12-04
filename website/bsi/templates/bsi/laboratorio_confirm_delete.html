@@ -6,10 +6,9 @@
     <h1><a href="/">BSI-Bacharelado em Sistemas de Informações</a></h1>
 </div>
 <center>
-<h1>Preencha abaixo:</h1>
-
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+    <h1>Laboratório Delete</h1>
+    <form method="post">{% csrf_token %}
+        Confirma a deleção de "{{ object }}" ?
+        <input type="submit" value="Submit" />
+    </form> 
 </center>
