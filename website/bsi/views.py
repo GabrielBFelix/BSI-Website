@@ -74,6 +74,25 @@ class LaboratorioDelete(DeleteView):
     model = models.Laboratorio
     success_url = reverse_lazy('laboratorio_list')
 
+class AlunoCreate(CreateView):
+    model = models.Aluno
+    fields = ['nome', 'username', 'email', 'senha']
+    success_url = reverse_lazy('aluno_list')
+    
+class AlunoUpdate(UpdateView):
+    model = models.Aluno
+    fields = ['nome', 'username', 'email', 'senha']
+    success_url = reverse_lazy('aluno_list')
+
+class AlunoDelete(DeleteView):
+    model = models.Aluno
+    success_url = reverse_lazy('aluno_list')
+
+class AlunoList(ListView):
+    model = models.Aluno
+
+class AlunoDetail(DetailView):
+    model = models.Aluno
 
 
 def aluno(request, id):
