@@ -1,15 +1,17 @@
 {% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+    </div>
+    <center>
+        <h1>Preencha a baixo:</h1>
 
-<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
-
-<div class="page-header">
-    <h1><a href="/">BSI-Bacharelado em Sistemas de Informações</a></h1>
-</div>
-<center>
-<h1>Preencha a baixo:</h1>
-
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
-</center>
+        <form class = form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit" />
+        </form>
+    </center>
+</body>

@@ -7,7 +7,7 @@
 </div>
 <center>
 <h1>Preencha abaixo:</h1>
-<form method="post">{% csrf_token %}
+<form class = form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Editar" />
 </form>
