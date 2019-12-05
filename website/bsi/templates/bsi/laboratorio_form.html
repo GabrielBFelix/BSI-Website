@@ -1,0 +1,17 @@
+bsi{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+
+<div class="page-header">
+    <h1><a href="../../bsi/">BSI-Bacharelado em Sistemas de Informações</a>bsi</h1>
+</div>
+<center>
+    <h1>Preencha abaixo:</h1>
+
+    <h1>Adicionar Laboratório</h1>
+    <form class = form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form> 
+
+</center>

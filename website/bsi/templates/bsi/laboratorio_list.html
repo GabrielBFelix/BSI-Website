@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+
+<div class="page-header">
+    <h1><a href="../../bsi/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+</div>
+<center>
+
+<h1>Laboratórios</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Coordinator</th>
+    <th>Description</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for laboratorio in object_list %}
+    <tr>
+    <td>{{ laboratorio.nome }}</td>
+    <td>{{ laboratorio.coordenador }}</td>
+    <td>{{ laboratorio.descricao }}</td>
+    <td><a href="{% url "laboratorio_view" laboratorio.id %}">view</a></td>
+    <td><a href="{% url "laboratorio_edit" laboratorio.id %}">edit</a></td>
+    <td><a href="{% url "laboratorio_delete" laboratorio.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url "laboratorio_new" %}">Adicionar Laboratório</a>
+</center>

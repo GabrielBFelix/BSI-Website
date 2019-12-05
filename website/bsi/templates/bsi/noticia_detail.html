@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+
+<div class="page-header">
+   <h1><a href="../../bsi/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+</div>
+
+<h1>Detalhes da Notícia</h1>
+<h2>Nome: {{object.nome}}</h2>
+<h2>Autor: {{object.autor}}</h2>
+<h2>Descrição: {{object.descricao}}</h2>
+
+
