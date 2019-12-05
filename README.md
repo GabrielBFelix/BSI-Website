@@ -25,5 +25,18 @@ Python é uma linguagem de programação de alto nível, interpretada, de script
 	É um framework para aplicações web gratuito e de código aberto, escrito em Python. Uma framework, onde você não precisa saber muito de Python para utilizar. Na verdade, a simplicidade da escrita do Python mesclada a velocidade de desenvolvimento proporcionada pelo Django faz você sentir satisfação em encarar projetos grandes.
 
 ### **Sqlite:**
+	Um SGBD simples que vem como padrão no framework Django. Inspirado no MySQL, ele foi escolhido pela sua facilidade na utilização e implementação, como também, pela legibilidade do código, mas, no futuro, poderá ser feita a migração para outro SGBD.
 
+### **Instalação:**
 
+	Primeiro verifique se o seu sistema apresenta já apresenta o Django instalado usando o comando:
+	python -m django --version
+	
+	Se o python já estiver instalado pule esse passo, se não execute o código a seguir:
+	sudo apt-get install python3
+	
+	Agore baixe o programa na sua máquina e dentro da pasta ../BSI-Website/website execute o seguinte comando:
+	python3 manage.py runserver
+	
+	Agora vá no navegador e digite:
+	http://127.0.0.1:8000/bsi
