@@ -35,7 +35,7 @@ Python é uma linguagem de programação de alto nível, interpretada, de script
 	Se o python já estiver instalado pule esse passo, se não execute o código a seguir:
 	sudo apt-get install python3
 	
-	Agore baixe o programa na sua máquina e dentro da pasta ../BSI-Website/website execute o seguinte comando:
+	Agora baixe o programa na sua máquina e dentro da pasta ../BSI-Website/website execute o seguinte comando:
 	python3 manage.py runserver
 	
 	Agora vá no navegador e digite:
