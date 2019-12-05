@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bsi/bsi.css'%}">
+
+<div class="page-header">
+    <h1><a href="../../bsi/">BSI-Bacharelado em Sistemas de Informações</a></h1>
+</div>
+<center>
+<h1>Estagios</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Organização</th>
+    <th>Tipo</th>
+    <th>Professor Coordenador</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for estagio in object_list %}
+    <tr>
+    <td>{{ estagio.organizacao }}</td>
+    <td>{{ estagio.nome }}</td>
+    <td>{{ estagio.profCoordenador }}</td>
+    <td><a href="{% url "estagio_view" estagio.id %}">view</a></td>
+    <td><a href="{% url "estagio_edit" estagio.id %}">edit</a></td>
+    <td><a href="{% url "estagio_delete" estagio.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url "estagio_new" %}">Adicionar Estagio</a>
+</center>

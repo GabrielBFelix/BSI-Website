@@ -9,7 +9,7 @@ from django.template import loader
 
 from . import models
 
-from .models import Professor, Aluno, Laboratorio, Projeto, Noticia
+from .models import Professor, Aluno, Laboratorio, Projeto, Noticia, Estagio
 
 def index(request):
     noticia_list = Noticia.objects.order_by('nome')
@@ -17,6 +17,7 @@ def index(request):
     aluno_list = Aluno.objects.order_by('nome')
     laboratorio_list = Laboratorio.objects.order_by('nome')
     projeto_list = Projeto.objects.order_by('nome')
+    estagio_list = Estagio.objects.order_by('nome')
     template = loader.get_template('bsi/index.html');
     context = {'professor_list': professor_list, 'noticia_list': noticia_list, 'aluno_list': aluno_list, 'laboratorio_list': laboratorio_list, 'projeto_list': projeto_list}
     return render(request, 'bsi/index.html', context)
@@ -76,12 +77,12 @@ class LaboratorioDelete(DeleteView):
 
 class AlunoCreate(CreateView):
     model = models.Aluno
-    fields = ['nome', 'username', 'email', 'senha']
+    fields = ['nome', 'username', 'email', 'senha', 'vagaEstagio']
     success_url = reverse_lazy('aluno_list')
     
 class AlunoUpdate(UpdateView):
     model = models.Aluno
-    fields = ['nome', 'username', 'email', 'senha']
+    fields = ['nome', 'username', 'email', 'senha', 'vagaEstagio']
     success_url = reverse_lazy('aluno_list')
 
 class AlunoDelete(DeleteView):
@@ -95,7 +96,25 @@ class AlunoDetail(DetailView):
     model = models.Aluno
 
 
+class EstagioCreate(CreateView):
+    model = models.Estagio
+    fields = ['organizacao', 'nome', 'profCoordenador']
+    success_url = reverse_lazy('estagio_list')
+    
+class EstagioUpdate(UpdateView):
+    model = models.Estagio
+    fields = ['organizacao', 'nome', 'profCoordenador']
+    success_url = reverse_lazy('estagio_list')
 
+class EstagioDelete(DeleteView):
+    model = models.Estagio
+    success_url = reverse_lazy('estagio_list')
+
+class EstagioList(ListView):
+    model = models.Estagio
+
+class EstagioDetail(DetailView):
+    model = models.Estagio
 
 
 class NoticiaList(ListView):

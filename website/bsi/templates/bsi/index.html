@@ -41,6 +41,7 @@
             <li class = projeto_crud><a href="/bsi/projeto">CRUD Projetos<br /></a></li>
             <li class = noticia_crud><a href="/bsi/noticia">CRUD Noticias<br /></a></li>
             <li class = laboratorio_crud> <a href="/bsi/laboratorio">CRUD Laboratorios<br /></a></li>
+            <li class = estagio_crud> <a href="/bsi/estagio">CRUD Estagio<br /></a></li>
         </ul>
     </div>
     <h1>Noticias</h1>
@@ -106,6 +107,19 @@
     </ul>
     {% else %}
     <p>Sem laboratorios cadastrados.</p>
+    {% endif %}
+
+    <h1>Estagios</h1>
+    {% if estagipo_list %}
+    <ul>
+        {% for estagio in estagio_list %}
+        <li>
+            <a href="/bsi/estagio/view/{{ estagio.id }}">{{ estagio.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sem estagios cadastrados.</p>
     {% endif %}
 
 </body>

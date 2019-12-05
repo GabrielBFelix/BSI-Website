@@ -40,5 +40,11 @@ urlpatterns = [
     path('noticia/new', views.NoticiaCreate.as_view(), name='noticia_new'),
     path('noticia/edit/<int:pk>', views.NoticiaUpdate.as_view(), name='noticia_edit'),
     path('noticia/delete/<int:pk>', views.NoticiaDelete.as_view(), name='noticia_delete'),
+
+    path('estagio/', views.EstagioList.as_view(), name='estagio_list'),
+    path('estagio/view/<int:pk>', views.EstagioDetail.as_view(), name='estagio_view'),
+    path('estagio/new', views.EstagioCreate.as_view(), name='estagio_new'),
+    path('estagio/edit/<int:pk>', views.EstagioUpdate.as_view(), name='estagio_edit'),
+    path('estagio/delete/<int:pk>', views.EstagioDelete.as_view(), name='estagio_delete'),
 ]
 
